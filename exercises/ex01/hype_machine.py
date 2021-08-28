@@ -1,5 +1,7 @@
-# TODO: Write docstring here
+""""A small hype program for me"""
 
-# TODO: Initialize __author__ variable here
-
-# TODO: Implement your program logic here
+___author___ = "730307980"
+name: str = input("What is your name? ")
+print(name + ", I hope your game went well on Sunday vs VCU.")
+print("Well, " + name + ", I am sure tht you played well regardless of the result!")
+print("You know I am your biggest fan, " + name + "! :)")
