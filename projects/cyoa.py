@@ -1,5 +1,5 @@
 """A quiz game for sports nerds!"""
-__name__ = "__main__"
+__author__ = "730307980"
 
 from random import randint
 points: int = 0
@@ -10,32 +10,8 @@ MONEY_MOUTH = "\U0001F911"
 i: int = randint(1, 5)
 
 
-def main() -> None:
-    global points
-    global player
-    global sport
-    global i
-    points = 0
-    greet()
-    sport = int(input(f"What Sport would you like to choose? 1 = Basketball, 2 = Soccer, 3 = Challenge Question and endgame. You currently have ${points}. "))
-    while sport in {1, 2, 3}:
-        if sport == 1:
-            basketball()
-        else:
-            if sport == 2:
-                soccer()
-            else:
-                print(f"You are currently sitting on ${points}. You will be randomly assigned a challenge question, but before, you must wager.")
-                wager: int = int(input("How much are you willing to wager? $"))
-                if wager <= points:
-                    chal(points, wager)
-                else:
-                    print(f"You aren't that rich hahahaha{LAUGHING_FACE}{LAUGHING_FACE}{LAUGHING_FACE}")
-                    print("Just for that you lose all of your money. Go back to school. Thanks for playing!")
-    return None
-
-
 def greet() -> None:
+    """Welcome Message."""
     name = input("Hello! What is your name? ")
     player = name
     print(f"Welcome, {player}, to Sports Millionaire! ")
@@ -45,10 +21,10 @@ def greet() -> None:
         print("Let's go!")
     else:
         print("Too bad, you're here. Lets go.")
-    return None
 
 
 def basketball() -> None:
+    """Basketball Quiz Portion."""
     global points
     global sport
     print(f"So you fancy yourself a baller, {player}?  Here is your first question, for $125,000. ")
@@ -83,6 +59,7 @@ def basketball() -> None:
 
 
 def soccer() -> None:
+    """Soccer Quiz Portion."""
     global points
     global sport
     print(f"So you know the game some call football, {player}?  Here is your first question, for $125,000. ")
@@ -117,7 +94,8 @@ def soccer() -> None:
         sport = int(input(f"What Sport would you like to choose? 1 = Basketball, 2 = Soccer, 3 = Challenge Question and endgame. You currently have ${points}. "))
 
 
-def chal(a=int, b=int) -> int:
+def chal(a: int, b: int) -> int:
+    """Challenge Quiz Portion."""
     global points
     global sport
     global i
@@ -184,6 +162,31 @@ def chal(a=int, b=int) -> int:
     sport = 4
                             
     return points
+
+
+def main() -> None:
+    """Main Function of the game."""
+    greet()
+    global points
+    global player
+    global sport
+    global i
+    points = 0
+    sport = int(input(f"What Sport would you like to choose? 1 = Basketball, 2 = Soccer, 3 = Challenge Question and endgame. You currently have ${points}. "))
+    while sport in {1, 2, 3}:
+        if sport == 1:
+            basketball()
+        else:
+            if sport == 2:
+                soccer()
+            else:
+                print(f"You are currently sitting on ${points}. You will be randomly assigned a challenge question, but before, you must wager.")
+                wager: int = int(input("How much are you willing to wager? $"))
+                if wager <= points:
+                    chal(points, wager)
+                else:
+                    print(f"You aren't that rich hahahaha{LAUGHING_FACE}{LAUGHING_FACE}{LAUGHING_FACE}")
+                    print("Just for that you lose all of your money. Go back to school. Thanks for playing!")
 
 
 if __name__ == "__main__":
