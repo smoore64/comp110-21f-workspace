@@ -6,7 +6,7 @@ __author__ = "730307980"
 
 
 def only_evens(xs: list[int]) -> list[int]:
-    """Returns only evens in the list"""
+    """Returns only evens in the list."""
     output: list[int] = list()
     i: int = 0
     while i < len(xs):
@@ -17,7 +17,7 @@ def only_evens(xs: list[int]) -> list[int]:
 
 
 def sub(xs: list[int], start: int, end: int) -> list[int]:
-    """Returns a subset between the value of 2 indices"""
+    """Returns a subset between the value of 2 indices."""
     output: list[int] = list()
     i: int = 0
     if start >= 0 and end < len(xs):
@@ -41,11 +41,12 @@ def sub(xs: list[int], start: int, end: int) -> list[int]:
                     i = start
                     while i < end:
                         output.append(xs[i])
+                        i += 1
     return output
 
 
 def concat(xs: list[int], ys: list[int]) -> list[int]:
-    """A function to combine 2 lists"""
+    """A function to combine 2 lists."""
     output: list[int] = list()
     output = xs + ys
     return output
