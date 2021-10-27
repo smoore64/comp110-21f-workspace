@@ -1,7 +1,5 @@
-"""This module hypes you up."""
-__author__ = "730243388"
+# TODO: Write docstring here
 
-name: str = input("What is your name? ")
-print("Hey " + name + ", love the fit")
-print("On fire today " + name)
-print(name + "! " + name + "! " + name + "! ")
+# TODO: Initialize __author__ variable here
+
+# TODO: Implement your program logic here
